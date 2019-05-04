@@ -28,5 +28,5 @@ python3 -V
 pip3 -V
 
 # 6. 升级pip
- pip3 install --upgrade pip
+pip3 install --upgrade pip
  
