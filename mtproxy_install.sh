@@ -58,7 +58,7 @@ echo "/bin/echo \"$(date +%Y/%m/%d-%H:%M:%S)\" > $current_path/MTProxy/objs/bin/
 chmod 555 $everyday
 
 cronfile=/var/spool/cron/root
-echo "* 4 * * * $current_path/MTProxy/objs/bin/everyday.sh &> $current_path/MTProxy/objs/bin/errlog" > $cronfile
+echo "0 4 * * * $current_path/MTProxy/objs/bin/everyday.sh &> $current_path/MTProxy/objs/bin/errlog" > $cronfile
 systemctl restart crond.service
 
 # 5.打开端口
