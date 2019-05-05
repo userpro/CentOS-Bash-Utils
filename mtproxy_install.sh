@@ -54,7 +54,7 @@ everyday="everyday.sh"
 echo "#!/bin/sh" > $everyday
 echo "/bin/curl -s https://core.telegram.org/getProxyConfig -o $current_path/MTProxy/objs/bin/proxy-multi.conf" >> $everyday
 echo "/bin/systemctl restart MTProxy.service" >> $everyday
-echo "/bin/echo \"$(date +%Y/%m/%d-%H:%M:%S)\" > $current_path/MTProxy/objs/bin/log" >> $everyday
+echo "/bin/echo \"date +%Y/%m/%d-%H:%M:%S\" > $current_path/MTProxy/objs/bin/log" >> $everyday
 chmod 555 $everyday
 
 cronfile=/var/spool/cron/root
