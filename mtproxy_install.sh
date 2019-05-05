@@ -4,8 +4,8 @@
 # Don't forget check ./MTProxy/objs/bin/everyday.sh permission.
 
 # telegram MTProxy (CentOS 7)
-localport=9090
-netport=$(($RANDOM%2000+3000))
+localport=$(($RANDOM%3000+6000))
+netport=$(($RANDOM%2000+4000))
 # 1.安装MTProxy
 current_path=$(pwd)
 yum -y install curl
@@ -54,7 +54,7 @@ everyday="everyday.sh"
 echo "#!/bin/sh" > $everyday
 echo "/bin/curl -s https://core.telegram.org/getProxyConfig -o $current_path/MTProxy/objs/bin/proxy-multi.conf" >> $everyday
 echo "/bin/systemctl restart MTProxy.service" >> $everyday
-echo "/bin/echo \"date +%Y/%m/%d-%H:%M:%S\" > $current_path/MTProxy/objs/bin/log" >> $everyday
+echo "/bin/date +%Y/%m/%d-%H:%M:%S > $current_path/MTProxy/objs/bin/log" >> $everyday
 chmod 555 $everyday
 
 cronfile=/var/spool/cron/root
